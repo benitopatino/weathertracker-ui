@@ -27,9 +27,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Login to ACR
-        uses: azure/docker-login@v2
-        with:
-          login-server: ${{ env.ACR_LOGIN_SERVER }}
+        uses: az acr login --name $ACR_NAME
 
       - name: Set image tag
         id: vars
