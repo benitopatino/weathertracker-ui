@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { HttpResponse, HttpStatusCode } from '@angular/common/http';
 import { WeatherService } from '../weather/weather-service/weather-service.service';
+import { CityWeather } from '../weather/models/city-weather';
 
 @Component({
   selector: 'app-search',
@@ -15,6 +16,10 @@ import { WeatherService } from '../weather/weather-service/weather-service.servi
 export class Search {
 
   city: string = '';
+  cityWeather: CityWeather | null = null;
+
+
+  constructor(private weatherService: WeatherService) {}
 
   onSubmit(myForm: NgForm): void {
 
@@ -22,6 +27,16 @@ export class Search {
       return;
 
     console.log(`Searching for city: ${this.city}`);
+
+        // Call the API: choose which endpoint you want
+    this.weatherService.getWeatherByCity(this.city).subscribe({
+      next: res => {
+        console.log('API response:', res);
+      },
+      error: err => {
+        console.error(err);
+      }
+    });
 
   }
 }
