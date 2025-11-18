@@ -9,11 +9,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
   
-
-  getRandomWeather() {
-    return this.http.get(`${this.baseUrl}/weather/random`);
-  }
-
   getWeatherByCity(city: string) {
     return this.http.get(`${this.baseUrl}/weather?city=${encodeURIComponent(city)}`);
   }
