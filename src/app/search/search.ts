@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { NgForm } from '@angular/forms';
 import { HttpResponse, HttpStatusCode } from '@angular/common/http';
+import { WeatherService } from '../weather/weather-service/weather-service.service';
 
 @Component({
   selector: 'app-search',
