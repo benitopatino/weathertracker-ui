@@ -10,6 +10,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
   
   getWeatherByCity(city: string) {
-    return this.http.get(`${this.baseUrl}/weather?city=${encodeURIComponent(city)}`);
+    const url = `${this.baseUrl}/temperature/weather/${encodeURIComponent(city)}`;
+    return this.http.get(url);
   }
 }
