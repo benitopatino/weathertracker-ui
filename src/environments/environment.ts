@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiBaseUrl: 'https://api.myweatherapp.com', // your prod API
+  production: false,
+  apiBaseUrl: 'http://localhost:50000/api', // your local .NET API
 };

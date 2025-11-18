@@ -12,7 +12,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
   
   getWeatherByCity(city: string): Observable<CityWeather>  {
-    const url = `${this.baseUrl}/temperature/weather/${encodeURIComponent(city)}`;
+    const url = `${this.baseUrl}/weather/temperature/${encodeURIComponent(city)}`;
     return this.http.get<CityWeather>(url);
   }
 }
