@@ -31,7 +31,6 @@ export class Search {
         // Call the API: choose which endpoint you want
     this.weatherService.getWeatherByCity(this.city).subscribe({
       next: res => {
-        console.log('API response:', res.name);
         this.cityWeather = res;
       },
       error: err => {
